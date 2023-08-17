@@ -1,0 +1,22 @@
+@import '../variables/variables';
+@import '../mixins/fontStyles';
+
+.section__title {
+  @include fontStyle(40px, 600, $fr);
+  text-align: center;
+  margin-bottom: 20px;
+  color: $dark__color;
+}
+
+.section__header__description {
+  @include fontStyle(17px, 400, $fos);
+  max-width: 565px;
+  margin: 0 auto;
+  text-align: center;
+  color: $dark__color;
+}
+
+.z__index {
+  position: relative;
+  z-index: 9;
+}

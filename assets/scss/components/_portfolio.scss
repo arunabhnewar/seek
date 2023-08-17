@@ -1,0 +1,67 @@
+@import '../variables/variables';
+@import '../mixins/fontStyles';
+@import '../extended/darkOverlay';
+@import '../extended/flexAlign';
+
+#portfolio {
+  background: url('../images/portfolio-bg.jpg') no-repeat center / cover;
+  padding: 100px 0;
+  clip-path: polygon(0% 5%, 100% 0%, 100% 95%, 0% 100%);
+  position: relative;
+  &::after {
+    @extend %dark__overlay;
+  }
+  .section__title {
+    color: $white__color;
+  }
+  .section__header__description {
+    color: $white__pera;
+  }
+
+  .portfolio__image__container {
+    @extend %flex__align;
+    margin: 80px 0;
+    .portfolio__image {
+      overflow: hidden;
+      margin: 0 20px 20px 0;
+      position: relative;
+      transition: $transition;
+      .portfolio__image__overlay {
+        @extend %dark__overlay;
+        @extend %flex__align;
+        transform: translateY(-100%);
+        transition: $transition;
+        a {
+          @extend %flex__align;
+          font-size: 16px;
+          height: 35px;
+          width: 35px;
+          border-radius: 50%;
+          background-color: $bg__color;
+          color: $dark__color;
+          transition: $transition;
+          &:hover {
+            background-color: $yellow__color;
+          }
+        }
+      }
+
+      &:hover {
+        .portfolio__image__overlay {
+          transform: translateY(0);
+        }
+      }
+      img {
+        // height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.vbox-grab .vbox-child img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
